@@ -1,0 +1,3 @@
+function str = get_szStr(sz)
+str = sprintf('size = [%d, %d, %d, %d, %d]',...
+  sz(1), sz(2), sz(3),sz(4), sz(5) );

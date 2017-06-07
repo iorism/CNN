@@ -1,0 +1,308 @@
+>> timeit_gpu
+nnconv_forward_blas<GPU,float>: 639.942383
+nnconv_forward_blas<GPU,float>: 512.700867
+nnconv_forward_blas<GPU,float>: 510.959686
+nnconv_forward_blas<GPU,float>: 510.503845
+conv3d: 12.3925
+vl: 0.6187
+conv3d/vl: 20.0315
+>> clear all
+>> timeit_gpu
+nnconv_forward_blas<GPU,float>: 555.675634
+nnconv_forward_blas<GPU,float>: 426.164645
+nnconv_forward_blas<GPU,float>: 512.336457
+nnconv_forward_blas<GPU,float>: 511.570607
+conv3d: 12.3950
+vl: 0.5199
+conv3d/vl: 23.8423
+
+
+
+WITHOUT exception
+nnconv_forward_blas<GPU,float>: 429.777753
+nnconv_forward_blas<GPU,float>: 426.114836
+nnconv_forward_blas<GPU,float>: 511.931043
+nnconv_forward_blas<GPU,float>: 512.181295
+conv3d_blas_gpu::fprop: 10450.356677
+conv3d_blas_gpu::fprop: 10431.328470
+conv3d_blas_gpu::fprop: 10434.779472
+conv3d_blas_gpu::fprop: 10429.314379
+conv3d: 12.3924
+vl: 0.5198
+conv3d/vl: 23.8406
+
+WITH exception
+>> timeit_gpu
+nnconv_forward_blas<GPU,float>: 553.723427
+nnconv_forward_blas<GPU,float>: 432.003154
+nnconv_forward_blas<GPU,float>: 512.230198
+nnconv_forward_blas<GPU,float>: 512.639537
+conv3d_blas_gpu::fprop: 10440.529230
+conv3d_blas_gpu::fprop: 10433.278866
+conv3d_blas_gpu::fprop: 10416.200752
+conv3d_blas_gpu::fprop: 10423.708916
+conv3d: 12.3848
+vl: 0.5355
+conv3d/vl: 23.1267
+
+
+free_u, free_convmat
+>> timeit_gpu
+nnconv_forward_blas<GPU,float>: 552.989877
+nnconv_forward_blas<GPU,float>: 430.416514
+nnconv_forward_blas<GPU,float>: 512.188842
+nnconv_forward_blas<GPU,float>: 514.343001
+conv3d::create_Y: 0.031395
+conv3d_blas_gpu::init_convmat: 0.917087
+onv3d_blas_gpu::init_u: 0.016603
+conv3d_blas_gpu::fprop: 10447.936266
+conv3d_blas_gpu::free_u: 1943.867785
+conv3d_blas_gpu::free_convmat: 0.123466
+conv3d::create_Y: 0.519824
+conv3d_blas_gpu::init_convmat: 0.340512
+onv3d_blas_gpu::init_u: 0.030489
+conv3d_blas_gpu::fprop: 10429.067448
+conv3d_blas_gpu::free_u: 1957.466218
+conv3d_blas_gpu::free_convmat: 0.123164
+conv3d::create_Y: 0.024150
+conv3d_blas_gpu::init_convmat: 0.362850
+onv3d_blas_gpu::init_u: 0.019018
+conv3d_blas_gpu::fprop: 10441.530842
+conv3d_blas_gpu::free_u: 1973.868440
+conv3d_blas_gpu::free_convmat: 0.121654
+conv3d::create_Y: 0.022640
+conv3d_blas_gpu::init_convmat: 0.392736
+onv3d_blas_gpu::init_u: 0.027470
+conv3d_blas_gpu::fprop: 10470.395552
+conv3d_blas_gpu::free_u: 1967.113749
+conv3d_blas_gpu::free_convmat: 0.181425
+conv3d: 12.4151
+vl: 0.5146
+conv3d/vl: 24.1265
+
+
+free_convmat, free_u
+>> timeit_gpu
+nnconv_forward_blas<GPU,float>: 546.860062
+nnconv_forward_blas<GPU,float>: 428.887230
+nnconv_forward_blas<GPU,float>: 513.005707
+nnconv_forward_blas<GPU,float>: 512.091639
+conv3d::create_Y: 0.021735
+conv3d_blas_gpu::init_convmat: 1.734557
+onv3d_blas_gpu::init_u: 0.016301
+conv3d_blas_gpu::fprop: 10440.563644
+conv3d_blas_gpu::free_convmat: 1952.280055
+conv3d_blas_gpu::free_u: 0.033810
+conv3d::create_Y: 0.530993
+conv3d_blas_gpu::init_convmat: 0.428960
+onv3d_blas_gpu::init_u: 0.040149
+conv3d_blas_gpu::fprop: 10427.455450
+conv3d_blas_gpu::free_convmat: 1965.237916
+conv3d_blas_gpu::free_u: 0.019018
+conv3d::create_Y: 0.022640
+conv3d_blas_gpu::init_convmat: 0.377944
+onv3d_blas_gpu::init_u: 0.028678
+conv3d_blas_gpu::fprop: 10433.752805
+conv3d_blas_gpu::free_convmat: 1959.221605
+conv3d_blas_gpu::free_u: 0.020225
+conv3d::create_Y: 0.022942
+conv3d_blas_gpu::init_convmat: 0.408433
+onv3d_blas_gpu::init_u: 0.042262
+conv3d_blas_gpu::fprop: 10446.800020
+conv3d_blas_gpu::free_convmat: 1963.966431
+conv3d_blas_gpu::free_u: 0.020225
+conv3d: 12.4006
+vl: 0.5150
+conv3d/vl: 24.0766
+
+
+
+>> timeit_gpu
+conv3d::create_Y: 108.073540
+conv3d_blas_gpu::init_convmat: 4.299565
+onv3d_blas_gpu::init_u: 0.637252
+num inst = 1000 
+conv3d_blas_gpu::vol_to_convmat: 159.522813
+conv3d_blas_gpu::mut 1: 14709.378352
+[1024 500] x [500 16]
+conv3d_blas_gpu::mut 2: 183.694921
+[1024 1] x [1 16]
+conv3d_blas_gpu::fprop: 22996.442739
+conv3d_blas_gpu::free_convmat: 0.077883
+conv3d_blas_gpu::free_u: 0.095392
+
+conv3d::create_Y: 0.409037
+conv3d_blas_gpu::init_convmat: 0.322399
+onv3d_blas_gpu::init_u: 0.445563
+num inst = 1000 
+conv3d_blas_gpu::vol_to_convmat: 65.541871
+conv3d_blas_gpu::mut 1: 14877.137444
+[1024 500] x [500 16]
+conv3d_blas_gpu::mut 2: 140.539886
+[1024 1] x [1 16]
+conv3d_blas_gpu::fprop: 22876.729010
+conv3d_blas_gpu::free_convmat: 0.086939
+conv3d_blas_gpu::free_u: 0.111089
+
+conv3d::create_Y: 0.028074
+conv3d_blas_gpu::init_convmat: 0.351983
+onv3d_blas_gpu::init_u: 0.487222
+num inst = 1000 
+conv3d_blas_gpu::vol_to_convmat: 11.938439
+conv3d_blas_gpu::mut 1: 14930.976638
+[1024 500] x [500 16]
+conv3d_blas_gpu::mut 2: 72.275732
+[1024 1] x [1 16]
+conv3d_blas_gpu::fprop: 22803.195981
+conv3d_blas_gpu::free_convmat: 0.088750
+conv3d_blas_gpu::free_u: 0.119843
+
+conv3d::create_Y: 0.023546
+conv3d_blas_gpu::init_convmat: 0.274704
+onv3d_blas_gpu::init_u: 0.403905
+num inst = 1000 
+conv3d_blas_gpu::vol_to_convmat: 55.573148
+conv3d_blas_gpu::mut 1: 14881.399274
+[1024 500] x [500 16]
+conv3d_blas_gpu::mut 2: 111.765134
+[1024 1] x [1 16]
+conv3d_blas_gpu::fprop: 22836.690503
+conv3d_blas_gpu::free_convmat: 0.080902
+conv3d_blas_gpu::free_u: 0.094486
+
+
+num inst = 1000 
+im2row: 5.616028
+mut 1: 173.059664
+[1024 500] x [500 16]
+mut 2: 86.815102
+[1024 1] x [1 16]
+nnconv_forward_blas<GPU,float>: 273.295094
+
+num inst = 1000 
+im2row: 5.874129
+mut 1: 209.450952
+[1024 500] x [500 16]
+mut 2: 184.639781
+[1024 1] x [1 16]
+nnconv_forward_blas<GPU,float>: 400.196096
+
+num inst = 1000 
+im2row: 5.635047
+mut 1: 182.772400
+[1024 500] x [500 16]
+mut 2: 211.893701
+[1024 1] x [1 16]
+nnconv_forward_blas<GPU,float>: 400.496157
+
+num inst = 1000 
+im2row: 6.054348
+mut 1: 157.923796
+[1024 500] x [500 16]
+mut 2: 236.209199
+[1024 1] x [1 16]
+nnconv_forward_blas<GPU,float>: 400.404388
+
+conv3d: 22.8412
+vl: 0.4006
+conv3d/vl: 57.0169
+
+
+--------------------------------
+After mwSize -> int  x5 speed up
+--------------------------------
+>> timeit_gpu
+conv3d_blas_gpu::vol_to_convmat: 2621.582166
+conv3d_blas_gpu::vol_to_convmat: 2621.948941
+
+num inst = 1000 
+im2row: 63.459557
+nnconv_forward_blas<GPU,float>: 77.081235
+
+num inst = 1000 
+im2row: 64.265254
+nnconv_forward_blas<GPU,float>: 64.296045
+
+conv3d: 2.6243
+vl: 0.0649
+conv3d/vl: 40.4564
+>> 
+
+
+-------------------------------------------------------
+After template fcn -> normal fcn  no significant effect
+-------------------------------------------------------
+>> timeit_gpu
+conv3d_blas_gpu::vol_to_convmat: 2619.954472
+conv3d_blas_gpu::vol_to_convmat: 2620.688625
+
+num inst = 1000 
+im2row: 68.204685
+nnconv_forward_blas<GPU,float>: 68.240306
+
+num inst = 1000 
+im2row: 64.318685
+nnconv_forward_blas<GPU,float>: 64.345854
+
+conv3d: 2.6228
+vl: 0.0645
+conv3d/vl: 40.6729
+
+----------------------------------------------
+After __forceinline__ : no significant effect
+----------------------------------------------
+>> timeit_gpu
+conv3d_blas_gpu::vol_to_convmat: 2618.741248
+conv3d_blas_gpu::vol_to_convmat: 2622.762486
+
+num inst = 1000 
+im2row: 64.596408
+nnconv_forward_blas<GPU,float>: 70.642000
+
+num inst = 1000 
+im2row: 64.074471
+nnconv_forward_blas<GPU,float>: 64.102545
+
+conv3d: 2.6250
+vl: 0.0646
+conv3d/vl: 40.6293
+
+----------------------------------
+After threads along convmat's row
+----------------------------------
+>> timeit_gpu
+conv3d_blas_gpu::vol_to_convmat: 2479.082224
+conv3d_blas_gpu::vol_to_convmat: 2478.618549
+
+num inst = 1000 
+im2row: 63.995078
+nnconv_forward_blas<GPU,float>: 70.098027
+
+num inst = 1000 
+im2row: 64.195823
+nnconv_forward_blas<GPU,float>: 64.229935
+
+conv3d: 2.4810
+vl: 0.0648
+conv3d/vl: 38.3092
+
+
+--------------------------------------
+After threads along Y size and P, full
+--------------------------------------
+
+>> timeit_c3d_fprop_gpu
+
+conv3d: 0.0716
+vl: 0.0420
+conv3d/vl: 1.7070
+>> timeit_c3d_fprop_gpu
+
+conv3d: 0.0712
+vl: 0.0420
+conv3d/vl: 1.6969
+>> timeit_c3d_fprop_gpu
+
+conv3d: 0.0708
+vl: 0.0423
+conv3d/vl: 1.6754

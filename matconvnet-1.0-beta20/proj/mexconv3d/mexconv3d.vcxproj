@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AB4E7ACE-7975-4AF4-8207-793740711D2E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mexconv3d</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>TM; VB; WITH_GPUARRAY; WITH_OPENMP; WIN32;_DEBUG;_WINDOWS;_USRDLL;MEXCONV3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\src;D:\WorkStudy\MATLAB\R2014a\extern\include;D:\WorkStudy\MATLAB\R2014a\toolbox\distcomp\gpu\extern\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MEXCONV3D_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\conv3d.h" />
+    <ClInclude Include="..\..\src\logmsg.h" />
+    <ClInclude Include="..\..\src\staticMem.h" />
+    <ClInclude Include="..\..\src\wrapperBlas.h" />
+    <ClInclude Include="..\..\src\maxpool3d.h" />
+    <ClInclude Include="..\..\src\wrapperMx.h" />
+    <ClInclude Include="..\..\src\_conv3d_blas_cpu.h" />
+    <ClInclude Include="..\..\src\_conv3d_blas_gpu.h" />
+    <ClInclude Include="..\..\src\_conv3d_cpu.h" />
+    <ClInclude Include="..\..\src\_cu_helper.cuh" />
+    <ClInclude Include="..\..\src\_maxpool3d_cpu.h" />
+    <ClInclude Include="..\..\src\_maxpool3d_gpu.h" />
+    <ClInclude Include="..\..\src\_staticMem.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\builtin_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\channel_descriptor.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\common_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\crt\device_runtime.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cublas.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cublasXt.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cublas_api.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cublas_v2.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuComplex.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cudaD3D10.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cudaD3D11.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cudaD3D9.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cudaGL.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cudalibxt.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cudaProfiler.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_d3d10_interop.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_d3d11_interop.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_d3d9_interop.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_device_runtime_api.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_gl_interop.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_occupancy.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_profiler_api.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_runtime.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_runtime_api.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_surface_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuda_texture_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cufft.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cufftw.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cufftXt.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_discrete.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_discrete2.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_globals.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_kernel.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_lognormal.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_mrg32k3a.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_mtgp32.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_mtgp32dc_p_11213.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_mtgp32_host.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_mtgp32_kernel.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_normal.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_normal_static.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_philox4x32_x.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_poisson.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_precalc.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\curand_uniform.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cusparse.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cusparse_v2.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\cuviddec.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\device_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\device_functions_decls.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\device_launch_parameters.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\device_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\driver_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\driver_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\fatbinary.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\fatBinaryCtl.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\host_config.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\host_defines.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\math_constants.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\math_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\math_functions_dbl_ptx1.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\math_functions_dbl_ptx3.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npp.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppcore.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppdefs.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_arithmetic_and_logical_operations.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_color_conversion.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_compression_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_computer_vision.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_data_exchange_and_initialization.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_filtering_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_geometry_transforms.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_linear_transforms.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_morphological_operations.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_statistics_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_support_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppi_threshold_and_compare_operations.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npps.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npps_arithmetic_and_logical_operations.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npps_conversion_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npps_filtering_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npps_initialization.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npps_statistics_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\npps_support_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nppversion.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nvblas.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\nvcuvid.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_11_atomic_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_12_atomic_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_13_double_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_20_atomic_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_20_intrinsics.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_30_intrinsics.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_32_atomic_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_32_intrinsics.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_35_atomic_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sm_35_intrinsics.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\sobol_direction_vectors.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\surface_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\surface_indirect_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\surface_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\texture_fetch_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\texture_indirect_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\texture_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\vector_functions.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\vector_types.h" />
+    <ClInclude Include="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include\__cudaFatFormat.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\mex_conv3d.cpp" />
+    <ClCompile Include="..\..\mex_maxpool3d.cpp" />
+    <ClCompile Include="..\..\src\conv3d.cpp" />
+    <ClCompile Include="..\..\src\maxpool3d.cpp" />
+    <ClCompile Include="..\..\src\staticMem.cpp" />
+    <ClCompile Include="..\..\src\wrapperBlas_cpu.cpp" />
+    <ClCompile Include="..\..\src\wrapperMx.cpp" />
+    <ClCompile Include="..\..\src\_conv3d_blas_cpu.cpp" />
+    <ClCompile Include="..\..\src\_conv3d_cpu_pad0stride1.cpp" />
+    <ClCompile Include="..\..\src\_maxpool3d_cpu.cpp" />
+    <ClCompile Include="..\..\src\_maxpool3d_cpu_pad0PoolEqStride.cpp" />
+    <ClCompile Include="..\..\src\_staticMem_cpu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\wrapperBlas_gpu.cpp" />
+    <None Include="..\..\src\_conv3d_blas_gpu.cu" />
+    <None Include="..\..\src\_conv3d_blas_gpu_fc.cu" />
+    <None Include="..\..\src\_maxpool3d_gpu.cu" />
+    <None Include="..\..\src\_staticMem_gpu.cu" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
