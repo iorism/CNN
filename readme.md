@@ -9,7 +9,7 @@ Implementation
 ===========
 * Matconvnet (matconvnet-1.0-beta20)
 
-Learned network for NTIRE competition (CVPRW 2017)
+Learned network
 ===========
-* We plan to upload 'learned network files' to other places due to capacity.
-* Learned networks for 'Denosing, SISR' has been uploaded.
+* We plan to upload 'learned network for NTIRE competition (CVPRW 2017)' to other places due to capacity.
+* Learned networks for 'Denosing and SISR' has been uploaded.
